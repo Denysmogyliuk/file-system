@@ -1,34 +1,35 @@
 import { FlatTreeType } from "../context/types";
 
-const useSearch = (treeData: FlatTreeType, text: string) => {
+const useSearch = (treeData: FlatTreeType[], text: string) => {
   if (!text) {
     return treeData;
   }
 
-  const searchText = text.toLowerCase();
+  const searchText = text.trim().toLowerCase();
 
-  const filteredData = treeData
-    .filter((item) => {
-      if (!item.droppable) {
-        const parent = treeData.find((node) => node.id === item.parent);
-        if (parent && parent.text.toLowerCase().includes(searchText)) {
-          return true;
-        }
-      }
+  const searchableNode = treeData.find((node) =>
+    node.text.trim().toLowerCase().includes(searchText)
+  );
 
-      return item.text.toLowerCase().includes(searchText);
-    })
-    .map((item, _, arr) => {
-      if (item.parent !== 0 && !arr.find((node) => node.id === item.parent)) {
-        return { ...item, parent: 0 };
-      }
+  if (!searchableNode) {
+    return [];
+  }
 
-      return item;
-    });
+  const response: FlatTreeType[] = [];
 
-  console.log(filteredData, treeData, "filteredData");
+  const search = (node: FlatTreeType) => {
+    const dataToAdd = treeData.filter(({ parent }) => parent === node.id);
 
-  return filteredData;
+    if (dataToAdd.length) {
+      response.push(...dataToAdd);
+
+      dataToAdd.forEach(search);
+    }
+  };
+
+  search(searchableNode);
+
+  return [{ ...searchableNode, parent: 0 }, ...response];
 };
 
 export default useSearch;

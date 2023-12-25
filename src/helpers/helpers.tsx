@@ -5,10 +5,10 @@ import { FlatTreeType, TreeNodeType } from "../context/types";
  * Function converts tree structure to a flat list for using in @minoru/react-dnd-treeview.
  *
  * @param {TreeNodeType[]} treeData - Tree data type.
- * @returns {FlatTreeType} - Flat data type for minoru/react-dnd-treeview.
+ * @returns {FlatTreeType[]} - Flat data type for minoru/react-dnd-treeview.
  */
-export const convertToFlatList = (treeData: TreeNodeType[]): FlatTreeType => {
-  const result: FlatTreeType = [];
+export const convertToFlatList = (treeData: TreeNodeType[]): FlatTreeType[] => {
+  const result: FlatTreeType[] = [];
 
   function getFlatNodeTree(
     node: TreeNodeType,

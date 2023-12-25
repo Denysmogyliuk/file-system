@@ -6,7 +6,7 @@ export interface DataType {
   isDroppable: boolean;
 }
 
-export type FlatTreeType = NodeModel<DataType>[];
+export type FlatTreeType = NodeModel<DataType>;
 
 export interface TreeNodeType {
   id: string | number;
@@ -19,11 +19,11 @@ export interface TreeNodeType {
 }
 
 export interface FileTreeContextType {
-  dropFile: (item: FlatTreeType) => void;
+  dropFile: (item: FlatTreeType[]) => void;
   getFiles: () => void;
   isLoading: boolean;
   removeFile: (id: string | number) => void;
-  treeData: FlatTreeType;
+  treeData: FlatTreeType[];
 }
 
 export interface FileTreeContextProps {

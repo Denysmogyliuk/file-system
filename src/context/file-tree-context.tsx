@@ -25,7 +25,7 @@ export const FileTreeContext = createContext<FileTreeContextType>(
 
 export const FileTreeContextProvider = (props: FileTreeContextProps) => {
   const { children } = props;
-  const [treeData, setTreeData] = useState<FlatTreeType>([]);
+  const [treeData, setTreeData] = useState<FlatTreeType[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   const getFiles = useCallback(async (): Promise<void> => {
@@ -47,7 +47,7 @@ export const FileTreeContextProvider = (props: FileTreeContextProps) => {
     );
   }, []);
 
-  const dropFile = useCallback((updatedTree: FlatTreeType) => {
+  const dropFile = useCallback((updatedTree: FlatTreeType[]) => {
     setTreeData(updatedTree);
   }, []);
 
