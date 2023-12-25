@@ -6,9 +6,9 @@ import iconFolder from "./assets/icon-folder.svg";
 import iconDelete from "./assets/icon-delete.svg";
 
 // styles
-import styles from "./file.module.css";
+import styles from "./file-block.module.css";
 
-interface FileTreeItemProps {
+interface PropsType {
   fileName: string;
   hasChild: boolean;
   id: string | number;
@@ -20,7 +20,7 @@ interface FileTreeItemProps {
   onToggle: () => void;
 }
 
-const FileViewBlock = (props: FileTreeItemProps) => {
+const FileBlock = (props: PropsType) => {
   const {
     fileName,
     hasChild,
@@ -74,4 +74,4 @@ const FileViewBlock = (props: FileTreeItemProps) => {
   );
 };
 
-export default FileViewBlock;
+export default FileBlock;

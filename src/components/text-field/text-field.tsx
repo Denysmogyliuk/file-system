@@ -7,8 +7,8 @@ import styles from "./text-field.module.css";
 const DEBOUNCE_DELAY = 500;
 
 interface PropsType {
-  onInput: (text: string) => void;
   label: string;
+  onInput: (text: string) => void;
 }
 
 export default function TextField(props: PropsType): JSX.Element {

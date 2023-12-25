@@ -1,11 +1,9 @@
-import { TreeNodeType } from "./types";
-
-export const treeMock: TreeNodeType[] = [
+export const treeMock = [
   {
     id: 1,
     text: "Frontend",
     data: {
-      isRemovable: false,
+      isRemovable: true,
       isDroppable: true,
     },
     children: [
@@ -13,8 +11,8 @@ export const treeMock: TreeNodeType[] = [
         id: 2,
         text: "HTML",
         data: {
-          isRemovable: false,
-          isDroppable: false,
+          isRemovable: true,
+          isDroppable: true,
         },
       },
       {
@@ -22,7 +20,7 @@ export const treeMock: TreeNodeType[] = [
         text: "CSS",
         data: {
           isRemovable: true,
-          isDroppable: false,
+          isDroppable: true,
         },
       },
       {
@@ -58,20 +56,20 @@ export const treeMock: TreeNodeType[] = [
     text: "Backend",
     data: {
       isRemovable: false,
-      isDroppable: true,
+      isDroppable: false,
     },
     children: [
       {
         id: 20,
-        text: "Node.js",
+        text: "Node",
         data: {
-          isRemovable: true,
-          isDroppable: true,
+          isRemovable: false,
+          isDroppable: false,
         },
         children: [
           {
             id: 21,
-            text: "Express.js",
+            text: "Express",
             data: {
               isRemovable: false,
               isDroppable: false,
@@ -79,7 +77,7 @@ export const treeMock: TreeNodeType[] = [
           },
           {
             id: 24,
-            text: "Nest.js",
+            text: "Nest",
             data: {
               isRemovable: false,
               isDroppable: false,

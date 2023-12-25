@@ -14,10 +14,10 @@ import { useFileTreeContext } from "../../context/file-tree-context";
 import useSearch from "../../hooks/use-search";
 
 // components
-import FileViewBlock from "../file/file";
+import FileBlock from "../file/file-block";
 
 // styles
-import styles from "./tree.module.css";
+import styles from "./file-tree.module.css";
 
 interface PropsType {
   searchText: string;
@@ -56,7 +56,7 @@ export default function FileTree(props: PropsType): JSX.Element {
           root: styles.fileTree,
         }}
         render={(node, { isOpen, onToggle, hasChild }) => (
-          <FileViewBlock
+          <FileBlock
             fileName={node.text}
             hasChild={hasChild}
             id={node.id}

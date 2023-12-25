@@ -2,7 +2,7 @@ import { useState } from "react";
 
 // components
 import SearchField from "./components/text-field/text-field";
-import FileTree from "./components/tree/tree";
+import FileTree from "./components/tree/file-tree";
 
 // styles
 import "./App.css";
