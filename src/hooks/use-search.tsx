@@ -26,7 +26,7 @@ const useSearch = (treeData: FlatTreeType, text: string) => {
       return item;
     });
 
-  console.log(filteredData, "filteredData");
+  console.log(filteredData, treeData, "filteredData");
 
   return filteredData;
 };

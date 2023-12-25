@@ -11,7 +11,7 @@ interface PropsType {
   onInput: (text: string) => void;
 }
 
-export default function TextField(props: PropsType): JSX.Element {
+const TextField = (props: PropsType): JSX.Element => {
   const { onInput, label } = props;
 
   const [searchQuery, setSearchQuery] = useState<string>("");
@@ -52,4 +52,6 @@ export default function TextField(props: PropsType): JSX.Element {
       </label>
     </form>
   );
-}
+};
+
+export default TextField;

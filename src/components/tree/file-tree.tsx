@@ -23,7 +23,7 @@ interface PropsType {
   searchText: string;
 }
 
-export default function FileTree(props: PropsType): JSX.Element {
+const FileTree = (props: PropsType): JSX.Element => {
   const { searchText } = props;
 
   const { dropFile, getFiles, isLoading, removeFile, treeData } =
@@ -71,4 +71,6 @@ export default function FileTree(props: PropsType): JSX.Element {
       />
     </DndProvider>
   );
-}
+};
+
+export default FileTree;

@@ -4,10 +4,10 @@ import { FlatTreeType, TreeNodeType } from "../context/types";
 /**
  * Function converts tree structure to a flat list for using in @minoru/react-dnd-treeview.
  *
- * @param {TreeNodeType[]} treeData - Tree data type
- * @returns {FlatTreeType} - Flat data type for minoru/react-dnd-treeview
+ * @param {TreeNodeType[]} treeData - Tree data type.
+ * @returns {FlatTreeType} - Flat data type for minoru/react-dnd-treeview.
  */
-export function convertToFlatList(treeData: TreeNodeType[]): FlatTreeType {
+export const convertToFlatList = (treeData: TreeNodeType[]): FlatTreeType => {
   const result: FlatTreeType = [];
 
   function getFlatNodeTree(
@@ -36,4 +36,13 @@ export function convertToFlatList(treeData: TreeNodeType[]): FlatTreeType {
   });
 
   return result;
-}
+};
+
+/**
+ * Function to get delay.
+ *
+ * @param {number} delayTime - Delay time in ms.
+ * @returns {Promise<void>} Promise that resolves after delay.
+ */
+export const delay = (delayTime: number) =>
+  new Promise((resolve) => setTimeout(resolve, delayTime));

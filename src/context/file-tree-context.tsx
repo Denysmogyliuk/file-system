@@ -1,6 +1,6 @@
 import { createContext, useCallback, useContext, useState } from "react";
 
-import { convertToFlatList } from "../helpers/helpers";
+import { convertToFlatList, delay } from "../helpers/helpers";
 import {
   FileTreeContextProps,
   FileTreeContextType,
@@ -29,9 +29,6 @@ export const FileTreeContextProvider = (props: FileTreeContextProps) => {
   const [isLoading, setIsLoading] = useState(true);
 
   const getFiles = useCallback(async (): Promise<void> => {
-    const delay = (delayTime: number) =>
-      new Promise((resolve) => setTimeout(resolve, delayTime));
-
     try {
       setIsLoading(true);
       const treeData = convertToFlatList(treeMock);
