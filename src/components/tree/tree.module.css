@@ -1,0 +1,27 @@
+.fileTree {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.fileContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-top: 2px;
+    align-items: start;
+}
+
+.listItem {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    list-style-type: none;
+}
+
+.paceholder {}

@@ -1,0 +1,73 @@
+.fileWrapper {
+    display: flex;
+    justify-content: start;
+    height: 32px;
+    min-width: 164px;
+    lign-items: center;
+    background-color: #2F4F4F;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: #006476;
+
+        &.fileDeniedDrop {
+            background-color: #910000;
+        }
+    }
+}
+
+
+
+.fileName {
+    display: flex;
+    align-items: center;
+    margin-left: 8px;
+
+}
+
+.deleteButton {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    border: 1px solid white;
+    padding: 6px;
+    margin-left: auto;
+    border: none;
+    cursor: pointer;
+    opacity: 0.3;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+
+    &:hover {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
+
+.deleteIcon {
+    height: 24px;
+    width: 24px;
+}
+
+.triangle {
+    align-self: center;
+    margin-left: 8px;
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 8px solid #242424;
+    transition: transform 0.3s ease;
+}
+
+.triangleToBottom {
+    transform: rotate(90deg)
+}
+
+.itemLogo {
+    display: block;
+    width: 24px;
+    height: 24px;
+    align-self: center;
+    margin-left: 8px;
+}
