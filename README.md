@@ -1,30 +1,12 @@
-# React + TypeScript + Vite
+# React + TypeScript + Vite + react-dnd-treeview
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+npm i
+npm run dev
 
-Currently, two official plugins are available:
+Для реалізації проекту використав бібліотеку для відтворення деревоподібної файлової структури. На вході вона приймає плоску структуру, на яку перетворюються отримані з сервера дані, у зв'язку з чим є велика алгоритмічна складність, яка може досягати O(2^n)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Для мінімізації обчислень використав debounce на інпуті пошуку.
 
-## Expanding the ESLint configuration
+Реалізовано видалення та переміщення файлів і папок.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Реалізовано права доступу до елементів.
